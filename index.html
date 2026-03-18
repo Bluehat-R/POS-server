@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>じゃがバターPOS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="pos-layout">
+        <!-- 🍟 左：注文入力 -->
+        <section class="order-input">
+            <h2 id="clock">--:--</h2>
+
+            <div class="quantity">
+                <button id="minus">−</button>
+                <span id="qty">1</span>
+                <button id="plus">＋</button>
+            </div>
+
+            <div class="toppings">
+                <button id="cheese" class="toggle">🧀 チーズ +100円</button>
+                <button id="coupon" class="toggle">💴 クーポン（100円引き）</button>
+            </div>
+
+            <h3>合計: <span id="total">300</span>円</h3>
+
+            <button id="add">➕ 追加</button>
+            <button id="cancelAll" class="cancel">取消</button>
+
+            <p>お客様数: <span id="customerCount">0</span></p>
+        </section>
+
+        <!-- 🧾 中央：注文一覧 -->
+        <section class="order-list">
+            <h3>🧾 注文一覧</h3>
+            <table id="orderTable">
+                <thead>
+                    <tr>
+                        <th>数量</th>
+                        <th>トッピング</th>
+                        <th>状態</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="center-actions">
+                <button id="confirmAll" class="confirm">✅ 確定</button>
+            </div>
+        </section>
+
+        <!-- 👩‍🍳 右：調理側 -->
+        <section class="kitchen-view">
+            <h3>👩‍🍳 調理リスト</h3>
+            <ul id="kitchenList"></ul>
+        </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</body>
+
+</html>

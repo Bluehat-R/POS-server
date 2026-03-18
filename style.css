@@ -1,0 +1,491 @@
+body {
+    margin: 0;
+    background: #f8f8f8;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.pos-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 2fr 1.4fr;
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 左側 */
+#clock {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+
+#qty {
+    font-size: 48px;
+    width: 80px;
+    text-align: center;
+}
+
+#plus,
+#minus {
+    font-size: 48px;
+    width: 100px;
+    height: 100px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.toppings {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.toggle {
+    font-size: 26px;
+    padding: 18px;
+    border-radius: 16px;
+    background: #ddd;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.toggle.active {
+    background: #ffeb3b;
+    font-weight: bold;
+    color: #333;
+}
+
+h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+#add {
+    font-size: 28px;
+    padding: 18px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+#cancelAll {
+    font-size: 24px;
+    padding: 16px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.order-list table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 22px;
+}
+
+.order-list th,
+.order-list td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.order-list td button {
+    font-size: 18px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #f44336;
+    color: white;
+}
+
+.center-actions {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.confirm {
+    font-size: 28px;
+    padding: 20px 60px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+/* 調理リスト */
+.kitchen-view {
+    font-size: 22px;
+}
+
+#kitchenList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#kitchenList li {
+    background: #fff8e1;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#kitchenList button {
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.kitchen-page {
+    background: #fff3e0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.kitchen-page header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.kitchen-page h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* === 🍳 調理画面 === */
+.kitchen-page {
+    background: #fff3e0;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.kitchen-page header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.kitchen-page h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.kitchen-page #clock {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+#kitchenList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* 注文カード */
+#kitchenList li {
+    background: white;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.order-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-no {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.order-summary {
+    font-size: 32px;
+    color: #333;
+}
+
+/* 完了ボタン */
+#kitchenList .done {
+    font-size: 32px;
+    padding: 30px 60px;
+    border-radius: 20px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#kitchenList .done:hover {
+    background: #43a047;
+}
+
+/* フェードアウトアニメ */
+.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#kitchenList li {
+    background: white;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.done-state {
+    background: #eee;
+    opacity: 0.85;
+}
+
+.kitchen-buttons button {
+    margin-left: 10px;
+    padding: 28px 50px;
+    font-size: 32px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.kitchen-buttons .done {
+    background: #4caf50;
+}
+
+.kitchen-buttons .undo {
+    background: #ff9800;
+}
+
+.kitchen-buttons .delete {
+    background: #f44336;
+}
+
+.kitchen-buttons button {
+    margin-left: 10px;
+    padding: 28px 50px;
+    font-size: 32px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.kitchen-buttons .cook-done {
+    background: #4caf50;
+    /* 緑＝調理完了 */
+}
+
+.kitchen-buttons .serve-done {
+    background: #2196f3;
+    /* 青＝お渡し */
+}
+
+.kitchen-buttons .delete {
+    background: #f44336;
+    /* 赤＝削除 */
+}
+
+.half-done {
+    background: #fff3cd;
+    /* 黄色っぽい＝調理完了待ち渡し */
+}
+
+.done-state {
+    background: #e0e0e0;
+    /* グレー＝お渡し済み */
+    opacity: 0.85;
+}
+
+/* --- 状態別の見た目 --- */
+#kitchenList li {
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#kitchenList li.half-done {
+    background: #fff8e1;
+    /* 薄いオレンジ（調理完了） */
+}
+
+#kitchenList li.done-state {
+    background: #eeeeee;
+    /* グレー（お渡し完了） */
+}
+
+.order-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-no {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.order-summary {
+    font-size: 32px;
+    color: #333;
+}
+
+.order-status {
+    font-size: 28px;
+    color: #666;
+}
+
+/* --- ボタン配置 --- */
+.kitchen-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.kitchen-buttons button {
+    padding: 30px 50px;
+    font-size: 32px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.kitchen-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.kitchen-buttons .done {
+    background: #4caf50;
+    /* 緑（調理完了） */
+}
+
+.kitchen-buttons .serve {
+    background: #2196f3;
+    /* 青（お渡し） */
+}
+
+.kitchen-buttons .delete {
+    background: #f44336;
+    /* 赤（削除） */
+}
+
+/* 状態色 */
+#kitchenList li {
+    background: #fff;
+    transition: all .2s ease;
+}
+
+#kitchenList li.half-done {
+    background: #fff8e1;
+}
+
+/* 選択中（調理完了/お渡し❌） */
+#kitchenList li.done-state {
+    background: #eaf2ff;
+}
+
+/* お渡し段階（お渡し完了/削除） */
+
+.order-status {
+    font-size: 24px;
+    color: #666;
+}
+
+/* ボタン大きめ */
+.kitchen-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.kitchen-buttons button {
+    padding: 24px 40px;
+    font-size: 28px;
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.kitchen-buttons .to-select {
+    background: #607d8b;
+}
+
+/* 未調理 / お渡し完了 */
+.kitchen-buttons .to-uncooked {
+    background: #4caf50;
+}
+
+/* 調理完了 */
+.kitchen-buttons .to-serving {
+    background: #2196f3;
+}
+
+/* お渡し❌ */
+.kitchen-buttons .delete {
+    background: #f44336;
+}
+
+/* 削除 */
