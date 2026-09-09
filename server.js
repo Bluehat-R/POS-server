@@ -9,14 +9,11 @@ import linebot from "linebot";
 import dotenv from "dotenv";
 import crypto from "crypto";
 import fs from "fs";
-import PDFDocument from "pdfkit";
 
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const fontPath = path.join(__dirname, "fonts", "NotoSansJP-Regular.ttf");
 
 const app = express();
 const server = createServer(app);
