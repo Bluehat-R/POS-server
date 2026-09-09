@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+orders.db
+*.db
+
+receipts/
+public/receipts/
+
+*.log
+.DS_Store
